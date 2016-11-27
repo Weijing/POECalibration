@@ -1,12 +1,12 @@
 #!/usr/bin/python
 """
-    this is used to generate test data for POE/ML error compensation
-    the data is randomly generated through 6D
+    this is used to calibration robotic arm with Local POE method
 
     usage: this is meant to be a standalone module, run the following command:
-            python ./poe_data_gen.py -h for help
+            >>> python run_calibration.py -h 
+            for help
 
-    Authror:        Wei Jing
+    Author:        Wei Jing
     Data:           Nov 2016
 """
 from __future__ import division
