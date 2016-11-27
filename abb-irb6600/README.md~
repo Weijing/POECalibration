@@ -1,8 +1,0 @@
-the data is measured by Leica tracker
-
-given m is the number of measured data, n is the number of joints.
-
-The folder should consist of the following item:
-	1. joints.txt: contains the joints angle data (m*n) 
-	2. t_measured: 4n*4 data (where is m*(4*4 SE(3)) )
-	3. 
