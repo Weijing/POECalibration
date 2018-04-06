@@ -45,7 +45,7 @@ def calibration_poe(q, t_m, fk_init, s, iter=10, step=0.3):
     fk_cali = np.copy(fk_init)
     fk_cali = robot_poe_cali(t_m, fk_init, s, q[:,:], beta=0.1)
     for i in range(15):
-        print i
+        print("iteration: {}".format(i))
         fk_cali = robot_poe_cali(t_m, fk_cali, s, q[:,:])
     return fk_cali
 
@@ -90,9 +90,15 @@ def generate_data():
     fk_cali = calibration_poe(q, t_m, fk_init, s)
 
     np.set_printoptions(formatter={'float_kind':'{:.5f}'.format})
-    print fk_cali
-
-    print error_check(q, t_m, fk_cali, s)
+    print(fk_cali)
+    print("==============================")
+    err = error_check(q, t_m, fk_cali, s)
+    g = lambda x: math.sqrt(x[0]**2 + x[1]**2 + x[2]**2)
+    pos_err = np.apply_along_axis(g, 1, err)
+    avg_pos_err = np.average(pos_err,axis=0)
+    max_pos_err = np.amax(pos_err)
+    print("Avg postion error: {}; Max Pos Err: {}".format(avg_pos_err
+                ,max_pos_err))
 
 # =============================================================================
 if __name__ == "__main__":

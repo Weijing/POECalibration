@@ -117,7 +117,7 @@ def robot_poe_cali(t_m, t0, s, q, beta=0.5):
         dy[6*i:6*(i+1)] = log_v(np.dot(t_m[i], t_t2b_inv))
         ad[6*i:6*(i+1)] = robot_ad_mat(num_j, t0, s, q[i])
 
-    print "calibration: ad size: ", ad.shape
+    # print "calibration: ad size: ", ad.shape
     
     # rcond is critical
     x = np.dot(np.linalg.pinv(ad, rcond=1e-12), dy)
@@ -163,7 +163,7 @@ def robot_poe_cali2(y_m, t0, s, q, beta=0.5):
         dy[6*i:6*(i+1)] = log_v(np.dot(t_m, t_t2b_inv))
         ad[6*i:6*(i+1)] = robot_ad_mat(num_j, t0, s, q[i])
 
-    print "calibration: ad size: ", ad.shape
+    # print "calibration: ad size: ", ad.shape
     x = np.dot(np.linalg.pinv(ad, rcond=1e-14), dy)
     t_cali = np.copy(t0)
 
@@ -205,7 +205,7 @@ def robot_tb_cali(t_m, t0, s, q, beta=0.5):
         dy[6*i:6*(i+1)] = log_v(np.dot(t_m[i], t_t2b_inv))
         ad[6*i:6*(i+1)] = robot_ad_mat(num_j, t0, s, q[i])
 
-    print "calibration: ad size: ", ad.shape
+    # print "calibration: ad size: ", ad.shape
     x = np.dot(np.linalg.pinv(ad, rcond=1e-12), dy)
     t_cali = np.copy(t0)
 
@@ -250,7 +250,7 @@ def robot_tb_cali2(y_m, t0, s, q, beta=0.5):
         dy[6*i:6*(i+1)] = log_v(np.dot(t_m, t_t2b_inv))
         ad[6*i:6*(i+1)] = robot_ad_mat(num_j, t0, s, q[i])
 
-    print "calibration: ad size: ", ad.shape
+    # print "calibration: ad size: ", ad.shape
     x = np.dot(np.linalg.pinv(ad, rcond=1e-12), dy)
     t_cali = np.copy(t0)
 
@@ -297,7 +297,7 @@ def robot_poe_cali_load(t_m, t0, s, q, m_in, m, k, p, i_s, j_e, it=1, beta=0.5):
         dy[6*i:6*(i+1)] = log_v(np.dot(t_m[i], t_t2b_inv))
         ad[6*i:6*(i+1)] = robot_ad_mat(num_j, t0, s, q[i])
 
-    print "calibration: ad size: ", ad.shape
+    # print "calibration: ad size: ", ad.shape
     x = np.dot(np.linalg.pinv(ad, rcond=1e-14), dy)
     t_m = np.copy(t0)
 
@@ -355,9 +355,9 @@ class RobotPoe:
 
 # ===============================================
 if __name__ == "__main__":
-    print "poe calibration module"
-    print adjoint_rep(np.eye(4))
-    print log_v(np.eye(4))
-    log_v_test = np.loadtxt("test.txt")
-    print log_v_test
-    print log_v(log_v_test)
+    print("poe calibration module")
+    # print adjoint_rep(np.eye(4))
+    # print log_v(np.eye(4))
+    # log_v_test = np.loadtxt("test.txt")
+    # print log_v_test
+    # print log_v(log_v_test)

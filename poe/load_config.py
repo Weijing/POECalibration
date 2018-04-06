@@ -9,7 +9,7 @@ def load_robot_config_s(filename):
     data = np.loadtxt(filename)
     n_row = data.shape[0]
     if n_row % 6 != 0:
-        print "Wrong format of s configuration"
+        print("Wrong format of s configuration")
         sys.exit()
     num_j = int(n_row/6)
     s = np.zeros((num_j,6))
@@ -24,7 +24,7 @@ def load_robot_config_t0(filename):
     data = np.loadtxt(filename)
     n_row = data.shape[0]
     if n_row % 4 != 0:
-        print "Wrong format of s configuration"
+        print("Wrong format of s configuration")
         sys.exit()
     
     num_j = int(n_row/4)
@@ -48,7 +48,7 @@ class CaliLog(object):
         try:
             self.f = open(filename, "w")
         except:
-            print "Open log file failed"
+            print("Open log file failed")
 
     def write_log(self, s):
         self.f.write(s)
@@ -62,7 +62,7 @@ class CaliLog(object):
 # ==============================================
 if __name__ == "__main__":
     log1 = CaliLog("test.txt")
-    print log1.f
+    print(log1.f)
     
     a = np.array([1, 2, 3])
     log1.write_log(str(a))

@@ -104,9 +104,10 @@ def homo4_euler(t):
 
 # ====================================================================
 if __name__ == "__main__":
-    print rot3_x(math.pi/4)
-    print rot3_y(math.pi/4)
-    print rot3_z(math.pi/4)
-    print rot4_x(math.pi/4)
-    print trans4(np.array([1, 2, 3]))
-    print homo4_pos(np.eye(4))
+    print(__file__)
+    # print rot3_x(math.pi/4)
+    # print rot3_y(math.pi/4)
+    # print rot3_z(math.pi/4)
+    # print rot4_x(math.pi/4)
+    # print trans4(np.array([1, 2, 3]))
+    # print homo4_pos(np.eye(4))

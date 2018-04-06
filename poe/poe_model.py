@@ -105,7 +105,7 @@ def poe_trans(t0, s, q):
     # num_q = size(q)
     num_q = q.shape[0]
     if num_q != 7:
-        print "warnning, robot model may not be right"
+        print("warnning, robot model may not be right")
 
     for i in range(num_q):
         t = np.dot(np.dot(t, t0[i]), twist_exp(s[i], q[i]))
@@ -189,11 +189,12 @@ def robot_kine_load():
 
 # ================================================
 if __name__ == "__main__":
-    print rot3_x(math.pi/2)
-    print skew_sym(np.array([1, 2, 3]))
-    print norm(np.array([1, 2, 3]))
+    print(__file__)
+    # print rot3_x(math.pi/2)
+    # print skew_sym(np.array([1, 2, 3]))
+    # print norm(np.array([1, 2, 3]))
 
-    # exp_se3 passed sanaty test of all 1s and 0s
-    print exp_se3(np.ones(6))  
+    # # exp_se3 passed sanaty test of all 1s and 0s
+    # print exp_se3(np.ones(6))  
 
          
